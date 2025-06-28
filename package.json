@@ -1,0 +1,22 @@
+{
+  "name": "@su-s/art-gen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "art-gen": "./bin/lib.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.1",
+  "dependencies": {
+    "@darkobits/lolcatjs": "^4.0.1",
+    "commander": "^14.0.0",
+    "figlet": "^1.8.1",
+    "inquirer": "^12.6.3",
+    "node-fetch": "^2.7.0",
+    "quicktype-core": "^23.0.170"
+  }
+}
