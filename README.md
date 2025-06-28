@@ -1,133 +1,133 @@
 # 🎨 Art-Gen
 
-一个强大的命令行工具，用于从 JSON API 自动生成 TypeScript 接口类型定义。
+A powerful command-line tool for automatically generating TypeScript interface type definitions from JSON APIs.
 
-## ✨ 特性
+## ✨ Features
 
-- 🔗 **单个 API 生成** - 从单个 API URL 生成 TypeScript 类型
-- 📦 **批量生成** - 从多个 API 端点批量生成类型文件
-- 🎯 **交互式模式** - 友好的问答式操作界面
-- 🖥️ **命令行模式** - 支持传统命令行参数操作
-- 📁 **智能路径** - 默认保存到桌面，支持自定义路径
-- ✅ **输入验证** - 自动验证 URL 和文件路径
-- 🌐 **自动类型推断** - 智能分析 JSON 结构生成准确的 TypeScript 类型
+- 🔗 **Single API Generation** - Generate TypeScript types from a single API URL
+- 📦 **Batch Generation** - Batch generate type files from multiple API endpoints
+- 🎯 **Interactive Mode** - User-friendly question-and-answer interface
+- 🖥️ **Command Line Mode** - Support for traditional command line arguments
+- 📁 **Smart Paths** - Default save to desktop, support custom paths
+- ✅ **Input Validation** - Automatic validation of URLs and file paths
+- 🌐 **Auto Type Inference** - Intelligent analysis of JSON structure to generate accurate TypeScript types
 
-## 🚀 安装
+## 🚀 Installation
 
-### 方式一：使用 npx（推荐）
+### Method 1: Using npx (Recommended)
 ```bash
 npx art-gen
 ```
 
-### 方式二：全局安装
+### Method 2: Global Installation
 ```bash
 npm install -g art-gen
-# 然后可以直接使用
+# Then you can use directly
 art-gen
 ```
 
-### 方式三：本地开发
+### Method 3: Local Development
 ```bash
-# 克隆项目
+# Clone the project
 git clone <repository-url>
 cd art-gen
 
-# 安装依赖
+# Install dependencies
 pnpm install
 ```
 
-## 📖 使用方法
+## 📖 Usage
 
-### 交互式模式（推荐）
+### Interactive Mode (Recommended)
 
-最简单的使用方式，直接运行：
+The simplest way to use, run directly:
 
 ```bash
-# 使用 npx
+# Using npx
 npx art-gen
 
-# 或全局安装后
+# Or after global installation
 art-gen
 ```
 
-或者明确启动交互模式：
+Or explicitly start interactive mode:
 
 ```bash
-# 使用 npx
+# Using npx
 npx art-gen interactive
-npx art-gen i  # 简写
+npx art-gen i  # Shorthand
 
-# 或全局安装后
+# Or after global installation
 art-gen interactive
-art-gen i  # 简写
+art-gen i  # Shorthand
 ```
 
-交互式模式会引导你完成以下步骤：
-1. 选择生成模式（单个 API 或批量生成）
-2. 输入 API 信息
-3. 选择保存位置（默认桌面）
-4. 自动生成类型文件
+Interactive mode will guide you through the following steps:
+1. Select generation mode (single API or batch generation)
+2. Enter API information
+3. Choose save location (default desktop)
+4. Automatically generate type files
 
-### 命令行模式
+### Command Line Mode
 
-#### 单个 API 生成
+#### Single API Generation
 
 ```bash
-# 基本用法
+# Basic usage
 npx art-gen url https://jsonplaceholder.typicode.com/posts/1
 
-# 指定输出文件
+# Specify output file
 npx art-gen url https://api.example.com/user -o ./types/User.ts
 
-# 指定类型名称
+# Specify type name
 npx art-gen url https://api.example.com/user -n UserProfile -o ./User.ts
 
-# 全局安装后的用法
+# Usage after global installation
 art-gen url https://jsonplaceholder.typicode.com/posts/1
 ```
 
-#### 批量生成
+#### Batch Generation
 
 ```bash
-# 基本用法（空格分隔）
+# Basic usage (space-separated)
 npx art-gen batch https://jsonplaceholder.typicode.com /posts/1 /users/1 /comments/1
 
-# 指定输出目录和前缀
+# Specify output directory and prefix
 npx art-gen batch https://api.example.com /users /posts /comments -o ./types -p Api
 
-# 全局安装后的用法
+# Usage after global installation
 art-gen batch https://jsonplaceholder.typicode.com /posts/1 /users/1 /comments/1
 
-# 注意：命令行模式使用空格分隔路径，交互式模式支持逗号或空格分隔
+# Note: Command line mode uses space-separated paths, interactive mode supports comma or space separation
 ```
 
-## 📝 命令详解
+## 📝 Command Reference
 
-### `interactive` 或 `i`
-启动交互式类型生成器，通过问答方式完成操作。
+### `interactive` or `i`
+Start the interactive type generator with a question-and-answer approach.
 
 ### `url <apiUrl>`
-从单个 API URL 生成 TypeScript 类型。
+Generate TypeScript types from a single API URL.
 
-**选项：**
-- `-o, --output <file>` - 指定输出文件路径
-- `-n, --name <typeName>` - 指定自定义类型名称
+**Options:**
+- `-o, --output <file>` - Specify output file path
+- `-n, --name <typeName>` - Specify custom type name
 
 ### `batch <domain> <paths...>`
-从域名和多个路径批量生成类型文件。
+Batch generate type files from domain and multiple paths.
 
-**选项：**
-- `-o, --output <dir>` - 指定输出目录
-- `-p, --prefix <prefix>` - 指定类型名称前缀
+**Options:**
+- `-o, --output <dir>` - Specify output directory
+- `-p, --prefix <prefix>` - Specify type name prefix
 
-## 🌰 使用示例
+## 🌰 Examples
 
-### 示例 1：生成单个用户类型
+### Example 1: Generate Single User Type
 ```bash
 npx art-gen url https://jsonplaceholder.typicode.com/users/1
 ```
 
-生成的类型文件示例：
+Generated type file example:
 ```typescript
 export interface Users {
     id: number;
@@ -149,33 +149,33 @@ export interface Address {
 }
 ```
 
-### 示例 2：批量生成多个类型
+### Example 2: Batch Generate Multiple Types
 ```bash
 npx art-gen batch https://jsonplaceholder.typicode.com /users/1 /posts/1 /comments/1 -p Api
 ```
 
-将生成：
+Will generate:
 - `ApiUsers.ts`
 - `ApiPosts.ts` 
 - `ApiComments.ts`
 
-### 示例 3：交互式生成
+### Example 3: Interactive Generation
 ```bash
 npx art-gen
 ```
 
 ```
-🚀 欢迎使用 art-gen!
-💡 提示: 你也可以使用 "art-gen --help" 查看所有命令
+🚀 Welcome to art-gen!
+💡 Tip: You can also use "art-gen --help" to view all commands
 
-🎯 交互式类型生成器
-? 请选择生成模式: (Use arrow keys)
-❯ 🔗 单个 API 生成
-  📦 批量 API 生成
+🎯 Interactive Type Generator
+? Please select generation mode: (Use arrow keys)
+❯ 🔗 Single API Generation
+  📦 Batch API Generation
 ```
 
-## 🤝 贡献
+## 🤝 Contributing
 
-欢迎提交 Issue 和 Pull Request！
+Issues and Pull Requests are welcome!
 
 Made with ❤️ using TypeScript and Node.js
