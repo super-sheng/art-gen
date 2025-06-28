@@ -29,7 +29,7 @@ art-gen
 ### Method 3: Local Development
 ```bash
 # Clone the project
-git clone <repository-url>
+git clone https://github.com/super-sheng/art-gen
 cd art-gen
 
 # Install dependencies
