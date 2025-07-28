@@ -1,6 +1,6 @@
 {
-  "name": "@su-s/art-gen",
-  "version": "1.0.4",
+  "name": "@seanup/art-gen",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "type": "module",

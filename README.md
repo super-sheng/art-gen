@@ -16,12 +16,12 @@ A powerful command-line tool for automatically generating TypeScript interface t
 
 ### Method 1: Using npx (Recommended)
 ```bash
-npx art-gen
+npx @seanup/art-gen
 ```
 
 ### Method 2: Global Installation
 ```bash
-npm install -g art-gen
+npm install -g @seanup/art-gen
 # Then you can use directly
 art-gen
 ```
@@ -44,18 +44,16 @@ The simplest way to use, run directly:
 
 ```bash
 # Using npx
-npx art-gen
+npx @seanup/art-gen
 
-# Or after global installation
-art-gen
 ```
 
 Or explicitly start interactive mode:
 
 ```bash
 # Using npx
-npx art-gen interactive
-npx art-gen i  # Shorthand
+npx @seanup/art-gen interactive
+npx @seanup/art-gen i  # Shorthand
 
 # Or after global installation
 art-gen interactive
@@ -74,13 +72,13 @@ Interactive mode will guide you through the following steps:
 
 ```bash
 # Basic usage
-npx art-gen url https://jsonplaceholder.typicode.com/posts/1
+npx @seanup/art-gen url https://jsonplaceholder.typicode.com/posts/1
 
 # Specify output file
-npx art-gen url https://api.example.com/user -o ./types/User.ts
+npx @seanup/art-gen url https://api.example.com/user -o ./types/User.ts
 
 # Specify type name
-npx art-gen url https://api.example.com/user -n UserProfile -o ./User.ts
+npx @seanup/art-gen url https://api.example.com/user -n UserProfile -o ./User.ts
 
 # Usage after global installation
 art-gen url https://jsonplaceholder.typicode.com/posts/1
@@ -90,10 +88,10 @@ art-gen url https://jsonplaceholder.typicode.com/posts/1
 
 ```bash
 # Basic usage (space-separated)
-npx art-gen batch https://jsonplaceholder.typicode.com /posts/1 /users/1 /comments/1
+npx @seanup/art-gen batch https://jsonplaceholder.typicode.com /posts/1 /users/1 /comments/1
 
 # Specify output directory and prefix
-npx art-gen batch https://api.example.com /users /posts /comments -o ./types -p Api
+npx @seanup/art-gen batch https://api.example.com /users /posts /comments -o ./types -p Api
 
 # Usage after global installation
 art-gen batch https://jsonplaceholder.typicode.com /posts/1 /users/1 /comments/1
@@ -124,7 +122,7 @@ Batch generate type files from domain and multiple paths.
 
 ### Example 1: Generate Single User Type
 ```bash
-npx art-gen url https://jsonplaceholder.typicode.com/users/1
+npx @seanup/art-gen url https://jsonplaceholder.typicode.com/users/1
 ```
 
 Generated type file example:
@@ -151,7 +149,7 @@ export interface Address {
 
 ### Example 2: Batch Generate Multiple Types
 ```bash
-npx art-gen batch https://jsonplaceholder.typicode.com /users/1 /posts/1 /comments/1 -p Api
+npx @seanup/art-gen batch https://jsonplaceholder.typicode.com /users/1 /posts/1 /comments/1 -p Api
 ```
 
 Will generate:
@@ -161,7 +159,7 @@ Will generate:
 
 ### Example 3: Interactive Generation
 ```bash
-npx art-gen
+npx @seanup/art-gen
 ```
 
 ```
